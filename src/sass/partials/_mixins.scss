@@ -1,0 +1,44 @@
+// Mediaqueries
+@mixin mq($canvas) {
+    @if $canvas==sm {
+        @media only screen and (min-width: $sm) {
+            @content;
+        }
+    }
+    @else if $canvas==md {
+        @media only screen and (min-width: $md) {
+            @content;
+        }
+    }
+    @else if $canvas==lg {
+        @media only screen and (min-width: $lg) {
+            @content;
+        }
+    }
+}
+
+// Fonts
+@mixin fontawesome($icon, $pos:static) {
+    content:$icon;
+    display:inline-block;
+    font-family: 'FontAwesome';
+    @if ($pos == 'absolute'){
+        position:$pos;
+        @content;
+    }
+}
+
+@mixin fontsmals($icon, $pos:static) {
+    content:$icon;
+    display:inline-block;
+    font-family: 'fontsmals';
+    @if ($pos == 'absolute'){
+        position:$pos;
+        @content;
+    }
+}
+
+@mixin poppins($fw:400){
+    font-family:'poppins';
+    font-weight:$fw;
+}

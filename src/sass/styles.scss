@@ -1,0 +1,30 @@
+/*Specific variables*/
+@import 'partials/variables';
+
+/*Importe Module*/
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import '../../node_modules/jquery.mmenu/src/core/offcanvas/jquery.mmenu.offcanvas';
+@import '../../node_modules/font-awesome/scss/font-awesome';
+@import '../../node_modules/animate-sass/animate.scss';
+
+/*CSS*/
+@import 'partials/mixins';
+@import 'partials/functions';
+@import 'partials/placeholders';
+@import 'partials/cookies';
+@import 'partials/fonts';
+@import 'partials/typography';
+@import 'partials/utilities';
+@import 'partials/accordions';
+@import 'partials/alerts';
+@import 'partials/back-to-top';
+@import 'partials/buttons';
+@import 'partials/cards';
+@import 'partials/components';
+@import 'partials/dropdowns';
+@import 'partials/layout';
+@import 'partials/tables';
+@import 'partials/tabs';
+@import 'partials/header';
+@import 'partials/body';
+@import 'partials/footer';

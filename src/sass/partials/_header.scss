@@ -1,0 +1,62 @@
+#header{
+	
+	a{
+		text-decoration:none;
+	}
+
+
+	.navbar-toggler{
+		background:none;
+		border:0;
+		height:rem(32);
+		padding:0;
+		position:relative;
+		width:rem(32);
+		.navbar-toggler-icon{
+			top:50%;
+			left:50%;
+			margin-top:-3px;
+			transform:translateX(-50%);
+			transition:background 0.3s ease 0.5s, opacity 0.3s ease 0s;
+			@extend %iconBar;
+			&:before, &:after{
+				content:"";
+				position:absolute;
+				left:0;
+				transform:rotate3d(0, 0, 1, 0deg);
+				transition:top 0.3s ease 0.6s, transform 0.3s ease 0s;
+				@extend %iconBar;
+			}
+			&:before{
+				top:-8px;
+			}
+			&:after{
+				top:8px;
+			}
+			&:hover{
+				cursor:pointer;
+			}
+		}
+		&[aria-expanded="true"]{
+			.navbar-toggler-icon{
+				background:transparent;
+				transition:background 0.3s ease;
+				&:before, &:after{
+					top:0;
+					transition:top 0.3s ease 0s, transform 0.3s ease 0.5s;
+				}
+				&:before{
+					transform:rotate3d(0, 0, 1, 45deg);
+				}
+				&:after{
+					transform:rotate3d(0, 0, 1, -45deg);
+				}
+			}
+		}
+		&:focus{
+			box-shadow:none;
+			outline:none;
+		}
+	}
+
+}

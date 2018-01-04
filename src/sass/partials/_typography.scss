@@ -1,0 +1,114 @@
+body{
+	color:$gray-darker;
+	font-size:$browser-context + px;
+	font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+	position:relative;
+}
+h1{
+	font-size:em(28);
+	margin:em(50,38) 0 em(45,38);
+	text-align:center;
+	@include poppins(300);
+	@include mq(md){
+		font-size:em(38);
+	}
+	strong{
+		font-weight:500;
+	}
+}
+h2{
+	color:$brand-primary;
+	font-size:em(18);
+	margin-bottom:em(25,20);
+	margin-top:em(65,20);
+	text-transform:uppercase;
+	@include poppins(500);
+	@include mq(md){
+		font-size:em(20);
+	}
+}
+h3{
+	font-size:em(17);
+	margin-bottom:em(20,17);
+	@include poppins(500);
+}
+p{
+	&.lead{
+		font-size:em(16);
+		@include poppins;
+	}
+}
+a{
+	transition:color 0.35s, background 0.35s;
+	&:not(.btn){
+		text-decoration:underline;
+		color:$brand-primary;
+		&:hover{
+			text-decoration:none;
+		}
+	}
+	&[href^="mailto:"]{
+		&:after{
+			margin-left:3px;
+			@include fontawesome('\f003');
+		}
+	}
+	&[target="_blank"]{
+		&:after{
+			margin-left:3px;
+			@include fontawesome('\f08e');
+		}
+		&[href$="pdf"]{
+			&:after{
+				@include fontawesome('\f1c1');
+			}
+		}
+		&[href$="doc"], &[href$="docx"]{
+			&:after{
+				@include fontawesome('\f1c2');
+			}
+		}
+		&[href$="xls"]{
+			&:after{
+				@include fontawesome('\f1c3');
+			}
+		}
+	}
+}
+ul{
+	&:not(.list-inline):not(.dropdown-menu){
+		&:not(.list-unstyled){
+			padding-left:0;
+			list-style:none;
+			li{
+				padding-left:rem(15);
+				position:relative;
+				&:before{
+					font-size:0.4em;
+					color:$brand-primary;
+					@include fontawesome('\f111', absolute){
+						left:0;
+						top:rem(6);
+					}
+				}
+			}
+		}
+	}
+}
+ol{
+	padding:0 1rem;
+}
+.logo{
+	display:inline-block;
+	hyphens: manual;
+	padding-top:em(10,20);
+	position:relative;
+	text-transform:uppercase;
+	&:after{
+		color:$brand-primary;
+		margin-left:em(6,20);
+		position:relative;
+		top:em(-10,20);
+		@include fontsmals('\e902');
+	}
+}

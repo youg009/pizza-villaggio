@@ -1,0 +1,27 @@
+#euCookie {
+    background-color: rgba($gray-darker, 0.9);
+    color:white;
+    padding: 2em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 600;
+    p{
+        @include mq(lg){
+            margin:0;
+        }
+    }
+    ul{
+        &.list-inline{
+            margin:rem(-5) rem(-10) rem(-5) rem(-5);
+            @include mq(lg){
+                margin-left:rem(15);
+            }
+            .list-inline-item{
+                margin:rem(5) rem(10) rem(5) rem(5);
+                &:last-child{
+                }
+            }
+        }
+    }
+}

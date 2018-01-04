@@ -1,0 +1,54 @@
+#backTop{
+    align-items:center;
+    background:rgba($brand-primary, 0.7);
+    border-radius:50%;
+    color:white;
+    display:flex;
+    font-size:rem(12);
+    height:rem(60);
+    line-height:1.1;
+    overflow:hidden;
+    position:fixed;
+    text-align:center;
+    right:2rem;
+    bottom:2rem;
+    text-decoration:none;
+    transition:all 0.35s;
+    z-index:1000;
+    width:rem(60);
+    @include mq(lg){
+        display:block;
+    }
+    > *{
+        @include mq(lg){
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+            transition:all 0.35s;
+        }
+    }
+    span{
+        display:block;
+    }
+    .fa {
+        display:none;
+        font-size:1.35rem;
+        margin-top:rem(-65);
+        @include mq(lg){
+            display:block;
+        }
+    }
+    &:hover{
+        background:rgba($brand-primary, 1);
+        text-decoration:none;
+        span{
+            @include mq(lg){
+                margin-top:rem(65);
+            }
+        }
+        .fa{
+            margin-top:0;
+        }
+    }
+}

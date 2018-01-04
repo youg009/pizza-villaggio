@@ -1,0 +1,24 @@
+.dropdown{
+
+    .dropdown-toggle{
+        &:after{
+            border:0;
+            height:auto;
+            line-height:1;
+            margin:0 5px;
+            transition:all .35s;
+            vertical-align:0;
+            width:auto;
+            @include fontawesome('\f107');
+        }
+    }
+
+    &.show{
+        .dropdown-toggle{
+            &:after{
+                transform:rotate(180deg);
+            }
+        }
+    }
+
+}

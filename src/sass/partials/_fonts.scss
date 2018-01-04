@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "poppins";
+  src: url("#{$fonts-path}/poppins/Poppins-Light.ttf") format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("#{$fonts-path}/poppins/Poppins-Regular.ttf") format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins";
+  src: url("#{$fonts-path}/poppins/Poppins-Medium.ttf") format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'fontsmals';
+  src:
+    url('#{$fonts-path}/fontsmals/fontsmals.ttf?clgojb') format('truetype'),
+    url('#{$fonts-path}/fontsmals/fontsmals.woff?clgojb') format('woff'),
+    url('#{$fonts-path}/fontsmals/fontsmals.svg?clgojb#fontsmals') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

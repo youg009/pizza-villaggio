@@ -1,0 +1,37 @@
+// Font
+$fonts-path:					"../fonts";
+$fa-font-path:        "../vendor/font-awesome" !default;
+
+// Body font-size
+$browser-context:		  15;
+
+// Breakpoint variables
+$sm:							    576px;
+$md:							    768px;
+$lg:							    992px;
+$xl:							    1200px;
+
+// Colors
+$gray-darker:         #1e1d22;
+$gray-dark:						#2f2d35;
+$gray:                #626262;
+$gray-light:					#dadada;
+$gray-lighter:				#ececec;
+$brand-primary:				#926c13;
+$brand-error:         #dc3545;
+$brand-warning:       #ffc107;
+$brand-info:          #28a745;
+$brand-success:       #28a745;
+
+$theme-colors: (
+  primary:            $brand-primary,
+  secondary:          $brand-primary,
+  success:            $brand-success,
+  info:               $brand-info,
+  warning:            $brand-warning,
+  danger:             $brand-error,
+  lighter:            $gray-lighter,
+  light:              $gray-light,
+  dark:               $gray-dark,
+  darker:             $gray-darker
+) !default;

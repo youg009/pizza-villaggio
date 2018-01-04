@@ -1,0 +1,54 @@
+#footer{
+	padding:rem(25) 0;
+	@include mq(md){
+		padding:rem(30) 0;
+	}
+
+	a{
+		color:darken(saturate($brand-primary, 0.66), 2.55);
+		&:after{
+			display:none;
+		}
+	}
+
+	.partners{
+		@include clearfix;
+		@include mq(sm){
+			margin:0;
+		}
+		li{
+			vertical-align:middle;
+			width:50%;
+			float:left;
+			@include mq(sm){
+				margin:0;
+				width:auto;
+			}
+			a{
+				color:$gray;
+				text-decoration:none;
+				&:hover{
+					color:$gray-dark;
+				}
+				img{
+					height:rem(50);
+				}
+			}
+		}
+		+ li{
+			margin-top:0;
+			margin-bottom:0;
+		}
+	}
+
+	dl{
+		> * {
+			float:left;
+		}
+		dt{
+			clear:both;
+			margin-right:rem(10);
+		}
+	}
+
+}
