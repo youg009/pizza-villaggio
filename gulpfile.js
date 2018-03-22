@@ -83,11 +83,6 @@ gulp.task('vendor', function() {
 
     gulp.src('node_modules/font-awesome/fonts/*')
         .pipe(gulp.dest(dist + 'vendor/font-awesome'))
-
-    gulp.src([
-            'node_modules/jquery.mmenu/dist/*.js',
-        ])
-        .pipe(gulp.dest(dist + '/vendor/jquery.mmenu'))
 })
 
 // Copy images
@@ -115,11 +110,15 @@ gulp.task('clean', function() {
     });
 });
 
-// Clean html
-gulp.task('html', function(){
-    gulp.src(src + '/**/*.html')
-        .pipe(plugins.cleanhtml())
-        .pipe(gulp.dest('dist'))
+// Transform twig tpls into html
+gulp.task('twig', function () {
+    return gulp.src([src + '**/*.twig', '!' + src + '/tpls/**/*.twig'])
+        .pipe(plugins.twig(
+        {
+          errorLogToConsole: true
+        }))
+        .pipe(plugins.removeEmptyLines())
+        .pipe(gulp.dest(dist));
 });
 
 
@@ -127,11 +126,11 @@ gulp.task('html', function(){
 // cmd : gulp watch
 gulp.task('watch', ['browserSync', 'build'], function() {
     gulp.watch(src + 'sass/**/*.scss', ['css', browserSync.reload]);
-    gulp.watch(src + 'js/**/*', ['js', browserSync.reload]);
     gulp.watch(src + 'images/**/*', ['images', browserSync.reload]);
     gulp.watch(src + 'fonts/**/*', ['fonts', browserSync.reload]);
     gulp.watch(src + '**/*.' + docType, ['assets', browserSync.reload]);
-    gulp.watch(src + '**/*.html', ['html', browserSync.reload]);
+    gulp.watch(src + '**/*.twig', ['twig', browserSync.reload]);
+    gulp.watch(src + 'js/**/*', ['js', browserSync.reload]);
 });
 
 // Task "build"
@@ -139,7 +138,7 @@ gulp.task('watch', ['browserSync', 'build'], function() {
 gulp.task('build', function(callback) {
     runSequence(
         'clean',
-        ['css', 'js', 'images', 'fonts', 'assets', 'vendor', 'html'],
+        ['css', 'js', 'images', 'fonts', 'assets', 'vendor', 'twig'],
         callback);
 });
 
